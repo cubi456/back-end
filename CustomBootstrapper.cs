@@ -9,6 +9,9 @@ public class CustomBootstrapper : DefaultNancyBootstrapper
         activarCors(pipelines);
     }
 
+    /**
+    *   Metodo para permitir conexiones.
+    */
     public void activarCors(IPipelines pipelines)    
     {
         pipelines.AfterRequest.AddItemToEndOfPipeline((ctx) =>
