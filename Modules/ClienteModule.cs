@@ -1,14 +1,16 @@
 using Nancy;
 using Nancy.ModelBinding;
 using System.Collections.Generic;  
+using System;
+
 
 namespace back_end
 {
-    public class moduloCLiente : NancyModule
+    public class ClienteModule : NancyModule
     {
-            //Collecion de clientes que servira como almacenamiento
-            private static List<Cliente> clientes {get; set;} = new List<Cliente>();
-            public moduloCLiente()
+
+        
+            public ClienteModule(List<Cliente> clientes)
             {
                 //Solicitud para obtener los clientes
                 Get("/clientes",retornarClientes=> {
